@@ -8,32 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button register;
-    private Button login;
+    private Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        login = findViewById(R.id.Login);
-        register = findViewById(R.id.Register);
-        login.setOnClickListener(new View.OnClickListener() {
+        logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,loginActivity.class));
+                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(MainActivity.this,"Logged out!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(MainActivity.this,startActivity.class));
                 finish();
-                Toast.makeText(getApplicationContext(), "Logged in",Toast.LENGTH_LONG).show();
-
-            }
-        });
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, registerActivity.class));
-                finish();
-                Toast.makeText(getApplicationContext(),"Enter your details", Toast.LENGTH_SHORT).show();
             }
         });
     }
