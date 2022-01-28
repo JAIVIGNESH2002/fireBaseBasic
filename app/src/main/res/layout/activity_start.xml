@@ -70,5 +70,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.053"
         app:srcCompat="@drawable/firebase"
-        android:contentDescription="FirebaseImage" />
+        android:contentDescription="@string/firebaseimage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

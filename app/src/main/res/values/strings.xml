@@ -7,4 +7,9 @@
     <string name="already_a_user">Already a user?</string>
     <string name="new_user">New user?</string>
     <string name="todo">TODO</string>
+    <string name="firebaseimage">FirebaseImage</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="load">Load</string>
+    <string name="enter_name">Enter name</string>
+    <string name="add_to_rdb">ADD TO RDB</string>
 </resources>
